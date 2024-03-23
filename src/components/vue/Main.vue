@@ -1,11 +1,8 @@
 <template>
 	<div id="vue-main" :class="{ 'dark-mode': darkMode }">
 		<transition name="fade">
-			<Landing
-				:ref="'landing'"
-				:class="loading ? 'loading-disabled' : ''"
-				v-if="loadError || (!loaded && (!loadVisualizer || loading) && !autoLoading)"
-			/>
+			<Landing :ref="'landing'" :class="loading ? 'loading-disabled' : ''"
+				v-if="loadError || (!loaded && (!loadVisualizer || loading) && !autoLoading)" />
 		</transition>
 		<transition name="fade">
 			<VizLauncher v-if="(autoLoading && loading) || (loading && loaded)" />
@@ -43,7 +40,7 @@ export default {
 			darkMode: true,
 			autoLoad: false,
 			autoLoading: false,
-			selectedCoins: ["ETH", "BTC"],
+			selectedCoins: ["BCH"],
 			now: 0,
 			nowMinute: 0,
 			moonHeadAds: [],
@@ -226,9 +223,9 @@ export default {
 				endingString ? endingString : "d/home",
 				title,
 				window.location.origin +
-					config.baseUrl +
-					endingString +
-					(!pushState && window.location.search ? window.location.search : "")
+				config.baseUrl +
+				endingString +
+				(!pushState && window.location.search ? window.location.search : "")
 			);
 			document
 				.querySelector('meta[property="og:url"]')
@@ -281,6 +278,7 @@ export default {
 <style lang="scss" scoped>
 .loading-disabled {
 	pointer-events: none;
+
 	* {
 		opacity: 0.5;
 	}
@@ -289,13 +287,16 @@ export default {
 .fade-leave-active {
 	transition: opacity 0.2s;
 }
+
 .fade-enter,
 .fade-enter-active {
 	opacity: 1;
 }
+
 .fade-leave-to {
 	opacity: 0;
 }
+
 .disable-auto-launch {
 	position: fixed;
 	bottom: 0;

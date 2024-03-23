@@ -3,7 +3,7 @@
 		<div :style="'height:' + sectionHeight" class="launcher">
 			<viz-launcher ref="launcher" />
 		</div>
-		<div :style="'top:' + sectionHeight" class="below-content">
+		<!-- <div :style="'top:' + sectionHeight" class="below-content">
 			<MoonHeadAd class="moonhead-ad" />
 			<section class="hero is-primary is-medium" style="position: relative">
 				<picture class="alien-moving">
@@ -99,12 +99,12 @@
 									<div class="subtitle is-4">{{ calcStatValue(stat) }}</div>
 								</div>
 							</template>
-						</div>
-						<div v-if="$root.selectedCoins[1]" class="column is-half">
-							<div class="title" :style="'color: #' + enabledConfig[$root.selectedCoins[1]].color">
-								{{ enabledConfig[$root.selectedCoins[1]].coinName }}
-							</div>
-							<template v-for="(stat, statKey) in enabledConfig[$root.selectedCoins[1]].stats">
+</div>
+<div v-if="$root.selectedCoins[1]" class="column is-half">
+	<div class="title" :style="'color: #' + enabledConfig[$root.selectedCoins[1]].color">
+		{{ enabledConfig[$root.selectedCoins[1]].coinName }}
+	</div>
+	<template v-for="(stat, statKey) in enabledConfig[$root.selectedCoins[1]].stats">
 								<div v-if="stat.value" class="box" :key="statKey">
 									<div
 										:style="'color: #' + enabledConfig[$root.selectedCoins[1]].color"
@@ -115,43 +115,45 @@
 									<div class="subtitle is-4">{{ calcStatValue(stat) }}</div>
 								</div>
 							</template>
-						</div>
-					</div>
-				</div>
-			</section>
-            <section class="hero is-link socials">
-				<div class="hero-body">
-					<div class="columns has-text-centered">
-						<div  class="column is-half">
-							<a href="https://twitter.com/txstreetCom" target="_blank">
-                            <div class="subtitle">Twitter</div><img src="/static/img/banners/twitter.png" /></a>
-						</div>
-						<div  class="column is-half">
-							<a href="https://bit.ly/3rWCRm6" target="_blank">
-                            <div class="subtitle">Discord</div><img src="/static/img/banners/discord.png" /></a>
-						</div>
-					</div>
-				</div>
-			</section>
+</div>
+</div>
+</div>
+</section>
+<section class="hero is-link socials">
+	<div class="hero-body">
+		<div class="columns has-text-centered">
+			<div class="column is-half">
+				<a href="https://twitter.com/txstreetCom" target="_blank">
+					<div class="subtitle">Twitter</div><img src="/static/img/banners/twitter.png" />
+				</a>
+			</div>
+			<div class="column is-half">
+				<a href="https://bit.ly/3rWCRm6" target="_blank">
+					<div class="subtitle">Discord</div><img src="/static/img/banners/discord.png" />
+				</a>
+			</div>
 		</div>
+	</div>
+</section>
+</div> -->
 	</div>
 </template>
 
 
 <script>
 import VizLauncher from "../templates/VizLauncher.vue";
-import MoonHeadAd from "../templates/MoonHeadAd.vue";
-import Transactions from "../templates/Transactions.vue";
-import Blocks from "../templates/Blocks.vue";
+// import MoonHeadAd from "../templates/MoonHeadAd.vue";
+// import Transactions from "../templates/Transactions.vue";
+// import Blocks from "../templates/Blocks.vue";
 import { enabledConfig } from "../../../config";
 import { calcStatValue } from "../../../utils/";
 
 export default {
 	components: {
 		VizLauncher,
-		MoonHeadAd,
-		Transactions,
-		Blocks,
+		// MoonHeadAd,
+		// Transactions,
+		// Blocks,
 	},
 	methods: {
 		calcStatValue(stat) {
@@ -175,28 +177,33 @@ export default {
 		-webkit-transform: translateX(0px);
 		transform: translateX(0px);
 	}
+
 	80% {
 		-webkit-transform: translateX(-120vw);
 		transform: translateX(-120vw);
 	}
-    100% {
+
+	100% {
 		-webkit-transform: translateX(-120vw);
 		transform: translateX(-120vw);
 	}
 }
+
 .alien-moving {
 	position: absolute;
 	bottom: -6px;
 	right: -70px;
 	animation: movingPerson linear infinite 12s 2s;
-    will-change: transform;
+	will-change: transform;
 }
+
 .launcher {
 	width: 100%;
 	position: absolute;
 	left: 0;
 	top: 0;
 }
+
 .below-content {
 	width: 100%;
 	position: absolute;
@@ -206,10 +213,11 @@ export default {
 		margin: 50px 0;
 	}
 }
-.socials{
-    img{
-        max-height: 150px;
-        width: auto;
-    }
+
+.socials {
+	img {
+		max-height: 150px;
+		width: auto;
+	}
 }
 </style>

@@ -1437,19 +1437,14 @@ export const commonTitleOverrides = {
 };
 
 export const enabledConfig = {
-	ETH,
-	BTC,
 	BCH,
-	XMR,
-	LTC,
-	ARBI
 };
 
 export const additionalSheets = {
 	mall: {
 		key: "mall",
 		frames: [
-			"mall.png","eth_post.png", "walkway.png", "eth_post_desk.png", "rollup_sign.png", "rollup_sign_right.png", "envelope.png"
+			"mall.png", "eth_post.png", "walkway.png", "eth_post_desk.png", "rollup_sign.png", "rollup_sign_right.png", "envelope.png"
 		]
 	}
 }
